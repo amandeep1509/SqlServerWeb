@@ -59,6 +59,9 @@
                 </UpdateParameters>
             </asp:SqlDataSource>
         </asp:Panel>
+        <p>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AuthorInsert.aspx">Add New Author</asp:HyperLink>
+        </p>
     </form>
 </body>
 </html>

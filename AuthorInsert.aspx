@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Authordetails.aspx.cs" Inherits="Authordetails" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AuthorInsert.aspx.cs" Inherits="Authordetails" %>
 
 <!DOCTYPE html>
 
@@ -14,7 +14,7 @@
         <p>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:mybookstoreConnectionString1 %>" DeleteCommand="DELETE FROM [authors] WHERE [au_id] = @au_id" InsertCommand="INSERT INTO [authors] ([au_lname], [au_fname], [phone], [address], [city], [state], [zip]) VALUES (@au_lname, @au_fname, @phone, @address, @city, @state, @zip)" ProviderName="<%$ ConnectionStrings:mybookstoreConnectionString1.ProviderName %>" SelectCommand="SELECT [au_id], [au_lname], [au_fname], [phone], [address], [city], [state], [zip] FROM [authors] ORDER BY [au_lname]" UpdateCommand="UPDATE [authors] SET  [phone] = @phone, [zip] = @zip WHERE [au_id] = @au_id"></asp:SqlDataSource>
         </p>
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="au_id" DataSourceID="SqlDataSource1" Height="59px" Width="170px" DefaultMode="Insert">
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="au_id" DataSourceID="SqlDataSource1" Height="59px" Width="170px" DefaultMode="Insert" OnItemInserted="DetailView_ItemInsert" OnItemCommand="DetailView_Cancel">
             <EditRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
             <Fields>
                 <asp:BoundField DataField="au_id" HeaderText="AuthorID" InsertVisible="False" ReadOnly="True" SortExpression="au_id">
