@@ -8,11 +8,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <CustomControls:HeaderProps runat="server" />
+    <CustomControls:HeaderProps runat="server" Heading="Insert Author"/>
         <p>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:mybookstoreConnectionString1 %>" SelectCommand="SELECT * FROM [authors]"></asp:SqlDataSource>
+            &nbsp;</p>
+        <p>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:mybookstoreConnectionString1 %>" DeleteCommand="DELETE FROM [authors] WHERE [au_id] = @au_id" InsertCommand="INSERT INTO [authors] ([au_lname], [au_fname], [phone], [address], [city], [state], [zip]) VALUES (@au_lname, @au_fname, @phone, @address, @city, @state, @zip)" ProviderName="<%$ ConnectionStrings:mybookstoreConnectionString1.ProviderName %>" SelectCommand="SELECT [au_id], [au_lname], [au_fname], [phone], [address], [city], [state], [zip] FROM [authors] ORDER BY [au_lname]" UpdateCommand="UPDATE [authors] SET  [phone] = @phone, [zip] = @zip WHERE [au_id] = @au_id"></asp:SqlDataSource>
         </p>
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="au_id" DataSourceID="SqlDataSource1" Height="50px" Width="125px">
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="au_id" DataSourceID="SqlDataSource1" Height="59px" Width="170px" DefaultMode="Insert">
             <EditRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
             <Fields>
                 <asp:BoundField DataField="au_id" HeaderText="AuthorID" InsertVisible="False" ReadOnly="True" SortExpression="au_id">
@@ -39,6 +41,7 @@
                 <asp:BoundField DataField="zip" HeaderText="zip" SortExpression="zip" >
                 <ItemStyle Wrap="False" />
                 </asp:BoundField>
+                <asp:CommandField ShowInsertButton="True" />
             </Fields>
             <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
             <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
