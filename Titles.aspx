@@ -15,13 +15,13 @@
         <p>
             <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
                 <ItemTemplate>
-                    price:
+                    <strong>price:</strong>
                     <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price", "${0:F2}") %>' />
                     <br />
-                    title:
+                    <strong>title:</strong>
                     <asp:Label ID="titleLabel" runat="server" Text='<%# Eval("title") %>' Font-Bold="true" Font-Italic="true" />
                     <br />
-                    pubdate:
+                    <strong>pubdate:</strong>
                     <asp:Label ID="pubdateLabel" runat="server" Text='<%# Eval("pubdate", "{0:d}") %>' />
                     <br />
 <br />
