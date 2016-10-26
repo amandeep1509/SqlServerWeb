@@ -11,4 +11,9 @@ public partial class Titles : System.Web.UI.Page
     {
 
     }
+
+    protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }
