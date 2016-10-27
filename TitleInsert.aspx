@@ -39,9 +39,9 @@
                 <asp:TemplateField HeaderText="Price">
                     <EditItemTemplate>
                         <asp:TextBox ID="price" runat="server" Text="<%# Bind('price')%>"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="price" ErrorMessage="Price Is Required Field" Display="Dynamic" CssClass="ValidationError"></asp:RequiredFieldValidator >
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="price" ErrorMessage="Price Is Required Field" Display="None" CssClass="ValidationError"></asp:RequiredFieldValidator >
                         <br />
-                        <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="price" ErrorMessage="price must be 1 to 100" MaximumValue="100" MinimumValue="1" Type="Double" Display="Dynamic" CssClass="ValidationError"></asp:RangeValidator>
+                        <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="price" ErrorMessage="price must be 1 to 100" MaximumValue="100" MinimumValue="1" Type="Double" Display="None" CssClass="ValidationError"></asp:RangeValidator>
                     </EditItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Publish Date">
@@ -49,7 +49,7 @@
                     <EditItemTemplate>
                         <asp:TextBox ID="pubdate" runat="server" Text="<%# Bind('pubdate')%>"></asp:TextBox>
                        <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="pubdate" ErrorMessage="Date Is Required Field"></asp:RequiredFieldValidator>--%>
-                        <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="pubdate" ErrorMessage="Please enter a valid date" MaximumValue="31/12/2050" MinimumValue="01/01/1900" Type="Date" Display="Dynamic" CssClass="ValidationError"></asp:RangeValidator>
+                        <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="pubdate" ErrorMessage="Please enter a valid date" MaximumValue="31/12/2050" MinimumValue="01/01/1900" Type="Date" Display="None" CssClass="ValidationError"></asp:RangeValidator>
                     </EditItemTemplate>
 
                  </asp:TemplateField>
@@ -61,6 +61,7 @@
             <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
             <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
         </asp:DetailsView>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="ValidationError" />
     </form>
 </body>
 </html>
