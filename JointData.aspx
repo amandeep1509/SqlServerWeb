@@ -11,13 +11,19 @@
     <form id="form1" runat="server">
     <CustomControls:HeaderProps runat="server" Heading="Joint Data" />
         <p>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display.">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display." ForeColor="#333333" GridLines="None">
+                
                 <Columns>
                     <asp:BoundField DataField="title" HeaderText="Title" SortExpression="title" />
                     <asp:BoundField DataField="price" DataFormatString="{0:C}" HeaderText="Price" SortExpression="price" />
                     <asp:BoundField DataField="Full Name" HeaderText="Full Name" ReadOnly="True" SortExpression="Full Name" />
                     <asp:BoundField DataField="pub_name" HeaderText="Publisher" SortExpression="pub_name" />
                 </Columns>
+                
+                <HeaderStyle CssClass="reportHeader" />
+                <AlternatingRowStyle  CssClass="reportAltRow" />
+                <RowStyle CssClass="reportRow" />
+                
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:mybookstoreConnectionString1 %>" DeleteCommand="DELETE FROM [titles] WHERE [title_id] = @title_id" InsertCommand="INSERT INTO [titles] ([pub_id], [au_id], [title], [price], [pubdate], [notes]) VALUES (@pub_id, @au_id, @title, @price, @pubdate, @notes)" ProviderName="<%$ ConnectionStrings:mybookstoreConnectionString1.ProviderName %>" SelectCommand="SELECT titles.title, titles.price, authors.au_fname + ' ' + authors.au_lname AS [Full Name], publishers.pub_name FROM titles INNER JOIN publishers ON titles.pub_id = publishers.pub_id INNER JOIN authors ON titles.au_id = authors.au_id ORDER BY titles.title" UpdateCommand="UPDATE [titles] SET [pub_id] = @pub_id, [au_id] = @au_id, [title] = @title, [price] = @price, [pubdate] = @pubdate, [notes] = @notes WHERE [title_id] = @title_id">
                 <DeleteParameters>

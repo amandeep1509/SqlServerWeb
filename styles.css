@@ -31,3 +31,18 @@ a:hover
     font-weight:lighter;
     display:inline-block;
 }
+
+.reportHeader
+{  
+    background-color:#507CD1;
+    font-weight:bold;
+    color:white;
+}
+.reportRow
+{
+    background-color:#eff3fb;
+}
+.reportAltRow 
+{
+    background-color:#ffffff;
+}
