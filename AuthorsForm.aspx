@@ -25,6 +25,7 @@
                     <asp:BoundField DataField="city" HeaderText="city" SortExpression="city" ReadOnly="True" />
                     <asp:BoundField DataField="state" HeaderText="state" SortExpression="state" ReadOnly="True" />
                     <asp:BoundField DataField="zip" HeaderText="zip" SortExpression="zip" />
+                    <asp:HyperLinkField DataNavigateUrlFields="au_id" DataNavigateUrlFormatString="~/AuthorUpdate.aspx?au_id={0}" Text="Edit" />
                 </Columns>
                 <EditRowStyle BackColor="#7C6F57" />
                 <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -61,7 +62,6 @@
         </asp:Panel>
         <p>
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AuthorInsert.aspx">Add New Author</asp:HyperLink>
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/AuthorUpdate.aspx">Update Author</asp:HyperLink>
         </p>
     </form>
 </body>
