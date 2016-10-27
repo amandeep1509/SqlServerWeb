@@ -61,6 +61,7 @@
         </asp:Panel>
         <p>
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AuthorInsert.aspx">Add New Author</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/AuthorUpdate.aspx">Update Author</asp:HyperLink>
         </p>
     </form>
 </body>
