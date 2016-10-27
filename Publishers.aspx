@@ -9,7 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <CustomControls:HeaderProps runat="server" Heading="Publishers" />
+        <CustomControls:HeaderProps  runat="server" Heading="Publishers" />
         <p><span lang="en-us">This page will show a list of Publishers.</span></p>
         <p>
             <asp:DataList ID="DataList1" runat="server" DataKeyField="pub_id" DataSourceID="SqlDataSource1">

@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Header.ascx.cs" Inherits="Controls_Header" %>
 
-</style>
+
 <asp:Panel id="headerPanel" runat="server">
         <img alt="bookshelf" class="auto-style1" src="../Images/bookshelf.jpg" />
     </asp:Panel>

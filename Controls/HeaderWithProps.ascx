@@ -7,7 +7,7 @@
         src="../Images/bookshelf.jpg" />
 </asp:Panel>
 
-<asp:Panel ID="menuPanel" runat="server" CssClass="menuPanel">
+<asp:Panel ID="menusPanel" runat="server" CssClass="menuPanel">
     <a href="Default.aspx">Home</a> |
         <a href="Titles.aspx">Titles</a> |
         <a href="AuthorsForm.aspx">Authors</a> |
