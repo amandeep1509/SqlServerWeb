@@ -26,7 +26,8 @@
                 </UpdateParameters>
             </asp:SqlDataSource>
         </asp:Panel>
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="au_id" DataSourceID="SqlDataSource1" DefaultMode="Edit" Height="50px" Width="125px" OnItemUpdated="DetailView_ItemUpdated" OnItemCommand="DetailView_Cancel">
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="au_id" DataSourceID="SqlDataSource1" DefaultMode="Edit" Height="50px" Width="125px" OnItemUpdated="DetailView_ItemUpdated" OnItemCommand="DetailView_Cancel" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
+            <EditRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
             <Fields>
                 <asp:BoundField DataField="au_id" HeaderText="au_id" InsertVisible="False" ReadOnly="True" SortExpression="au_id" />
                 <asp:BoundField DataField="au_lname" HeaderText="au_lname" SortExpression="au_lname" />
@@ -38,6 +39,10 @@
                 <asp:BoundField DataField="zip" HeaderText="zip" SortExpression="zip" />
                 <asp:CommandField ShowEditButton="True" />
             </Fields>
+            <FooterStyle BackColor="White" ForeColor="#000066" />
+            <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+            <RowStyle ForeColor="#000066" />
         </asp:DetailsView>
     </form>
 </body>

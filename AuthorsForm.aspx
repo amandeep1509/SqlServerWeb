@@ -17,7 +17,6 @@
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="au_id" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display." Width="790px" AllowPaging="True" CellPadding="4" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:CommandField ShowEditButton="True" />
                     <asp:BoundField DataField="au_lname" HeaderText="Last Name" SortExpression="au_lname" ReadOnly="True" />
                     <asp:BoundField DataField="au_fname" HeaderText="au_fname" SortExpression="au_fname" ReadOnly="True" />
                     <asp:BoundField DataField="phone" HeaderText="phone" SortExpression="phone" />
@@ -26,6 +25,7 @@
                     <asp:BoundField DataField="state" HeaderText="state" SortExpression="state" ReadOnly="True" />
                     <asp:BoundField DataField="zip" HeaderText="zip" SortExpression="zip" />
                     <asp:HyperLinkField DataNavigateUrlFields="au_id" DataNavigateUrlFormatString="~/AuthorUpdate.aspx?au_id={0}" Text="Edit" />
+                    <asp:CommandField EditText="" ShowDeleteButton="True" ShowEditButton="True" />
                 </Columns>
                 <EditRowStyle BackColor="#7C6F57" />
                 <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

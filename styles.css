@@ -24,3 +24,10 @@ a:hover
    width: 250px;
    background-color:orange;
 }
+
+.ValidationError
+{
+    background-color:deeppink;
+    font-style:italic;
+    font-weight:lighter;
+}
